@@ -4,20 +4,20 @@ import './App.css';
 
 function App() {
 
-//     const fetchData = async () => {
-//   try {
-//     const response = await axios.get("https://vercel-deployment-server-livid.vercel.app/home")
-//       .then((response) => {
-//         console.log(response.data);
+    const fetchData = async () => {
+  try {
+    const response = await axios.get("https://vercel-deployment-server-livid.vercel.app/home")
+      .then((response) => {
+        console.log(response.data);
 
-//       });
-//   } catch (error) {
-//     // Handle error
-//     console.error(error);
-//   }
-// };
+      });
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+};
 
-// fetchData();
+fetchData();
 
   return (
     <div className="App">
