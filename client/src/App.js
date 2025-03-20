@@ -6,7 +6,7 @@ function App() {
 
     const fetchData = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/shops")
+    const response = await axios.get("https://vercel-deployment-server-livid.vercel.app/shops")
       .then((response) => {
         console.log(response.data);
 
