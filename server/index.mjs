@@ -1,8 +1,12 @@
 // const express = require ('express')
 import express from 'express'
+import bodyParser from 'body-parser'
 const app = express()
 import cors from 'cors'
 app.use(cors())
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 
 // import { createClient } from '@supabase/supabase-js'
