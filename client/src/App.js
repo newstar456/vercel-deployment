@@ -1,7 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+  import axios from "axios"
 
 function App() {
+
+    const fetchData = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/shops")
+      .then((response) => {
+        console.log(response.data);
+
+      });
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+};
+
+fetchData();
+
   return (
     <div className="App">
       <header className="App-header">

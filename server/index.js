@@ -1,8 +1,34 @@
 const express = require('express')
 const app = express()
 
-app.use('/', (req, res) => {
-    res.send("Server is running");
-})
+
+const { createClient } =require('@supabase/supabase-js')
+const supabase = createClient('https://eyxccahssmwxluobjzyb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5eGNjYWhzc213eGx1b2JqenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0MTE3NDYsImV4cCI6MjA1Nzk4Nzc0Nn0.EyAezK8taMRdmnGdvmQFSI2wtbEhFqlsBjE8n4NQIu4')
+
+app.get('/shops', (req, res) => {
+    async function fetchShops() {
+  try {
+    const {data, shopsError} = await supabase.from('Shops').select();
+    // const {coupons, couponsError} = await supabase.from('Coupons').select();
+    // const {meds, medsError} = await supabase.from('Meds').select();
+    // const {orders, ordersError} = await supabase.from('Orders').select();
+    // const {cart, cartError} = await supabase.from('Cart').select();
+    // console.log(data);
+    // res.status(200).json(JSON.stringify(data, null, 2));
+    res.status(200).json('shops');
+    console.log('Connection to SUPABASE has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+}
+fetchShops();
+    
+});
+
+
+app.get('/home', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+});
+
 
 app.listen(4000, console.log('Server has started on port 4000'))
