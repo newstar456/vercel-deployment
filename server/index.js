@@ -1,7 +1,7 @@
-import express from 'express'
+const express = require ('express')
 const app = express()
-import cors from 'cors'
-app.use(cors())
+// import cors from 'cors'
+// app.use(cors())
 
 
 // import { createClient } from '@supabase/supabase-js'
