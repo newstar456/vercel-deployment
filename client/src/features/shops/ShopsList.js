@@ -53,7 +53,8 @@ const ShopsStack = styled(Stack) (function () {
 
 const ShopsList = () => {
 
-//   const shops = useSelector(selectAllShops)
+  const shops = useSelector(selectAllShops)
+  console.log(shops);
 //   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
 //   let contentShops = shops.map(shopId => console.log(shopId))
        
