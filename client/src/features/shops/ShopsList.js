@@ -55,12 +55,12 @@ const ShopsList = () => {
 
   const shops = useSelector(selectAllShops)
 //   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
-  let contentShops = shops.map(shopId => console.log(shopId))
+//   let contentShops = shops.map(shopId => console.log(shopId))
        
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
-      <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
+      {/* <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack> */}
     </ShopsMenu>
   );
 }
