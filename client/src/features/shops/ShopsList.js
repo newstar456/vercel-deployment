@@ -95,7 +95,7 @@ const ShopsList = () => {
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
-      {/* <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack> */}
+      <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
       <Stack direction='column'>
       <p>1</p>
       <p>1</p>
