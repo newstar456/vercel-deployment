@@ -3,14 +3,15 @@ import axios from "axios"
 // import {apiSlice} from '../api/api'
 // import { useParams } from 'react-router-dom'
 
-const HOME_URL = 'https://vercel-deployment-five-xi.vercel.app'
+// const HOME_URL = 'https://vercel-deployment-five-xi.vercel.app'
 const shopsAdapter = createEntityAdapter({sortComparer: (a, b) => a.id.localeCompare(b.id)})
 const initialState = shopsAdapter.getInitialState()
 
 export const fetchShops = createAsyncThunk('shops/fetchShops', async () => {
     await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
+        return response.data
       });
 })
 
