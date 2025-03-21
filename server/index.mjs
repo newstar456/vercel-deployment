@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   async function fetchShops() {
   try {
     // const {data, shopsError} = await supabase.from('Shops').select();
-    const {data, medsError} = await supabase.from('Meds').select('id, name, price, available_qty, shop_id, img, favorite, Shops(name)');
+    const {data, medsError} = await supabase.from('Meds').select('id, name, price, available_qty, shop_id, img, favorite, Shops(name, adress, title)');
     res.status(200).json(JSON.stringify(data, null, 2));
     console.log('Connection to SUPABASE has been established successfully.');
   } catch (error) {
