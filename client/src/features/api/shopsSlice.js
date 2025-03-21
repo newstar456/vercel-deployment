@@ -16,7 +16,7 @@ export const fetchShops = createAsyncThunk('shops/fetchShops', async () => {
 })
 
 const shopsSlice = createSlice({
-    name: 'shops',
+    name: 'data',
     initialState,
     reducers: {},
     extraReducers(builder) {
@@ -32,6 +32,6 @@ export const {
     selectAll: selectAllShops,
     selectById: selectShopById,
     selectIds: selectShopIds
-} = shopsAdapter.getSelectors(state => state.shops)
+} = shopsAdapter.getSelectors(state => state.data)
 
 export default shopsSlice.reducer
