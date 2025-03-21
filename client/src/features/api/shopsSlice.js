@@ -8,8 +8,10 @@ const shopsAdapter = createEntityAdapter({sortComparer: (a, b) => a.id.localeCom
 const initialState = shopsAdapter.getInitialState()
 
 export const fetchShops = createAsyncThunk('shops/fetchShops', async () => {
-    const response = await axios.get(HOME_URL)
-    return response.data.shops
+    await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
+      .then((response) => {
+        console.log(response.data);
+      });
 })
 
 const shopsSlice = createSlice({

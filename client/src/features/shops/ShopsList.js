@@ -51,21 +51,21 @@ const ShopsStack = styled(Stack) (function () {
 })
 
 
-// const ShopsList = ({setShop}) => {
+const ShopsList = () => {
 
-//   const shops = useSelector(selectAllShops)
-// //   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
-//   let contentShops = shops.map(shopId => console.log(shopId))
+  const shops = useSelector(selectAllShops)
+//   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
+  let contentShops = shops.map(shopId => console.log(shopId))
        
-//   return(
-//     <ShopsMenu>
-//       <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
-//       <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
-//     </ShopsMenu>
-//   );
-// }
+  return(
+    <ShopsMenu>
+      <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
+      <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
+    </ShopsMenu>
+  );
+}
 
-// export default ShopsList
+export default ShopsList
 
 
 
