@@ -61,7 +61,7 @@ const ShopsList = () => {
         const fetchShops = async () => {
             try {
               // await axios.get("http://localhost:3000/home")
-              await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
+              await axios.get("https://vercel-deployment-five-xi.vercel.app")
                 .then((response) => {
                     const obj = JSON.parse(response.data)
                   // console.log(response.data);
