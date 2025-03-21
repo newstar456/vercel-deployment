@@ -6,7 +6,6 @@ import { useTheme } from '@mui/material/styles'
 
 
 
-
 const Header = () => {
   const theme = useTheme();
     return (
@@ -20,7 +19,7 @@ const Header = () => {
             </IconButton>
           </Link>
           <Stack direction="row" divider={<Divider orientation="vertical" flexItem sx={{bgcolor:`${theme.palette.common.white}`}}/>} spacing={2}>
-            <Link component={RouterLink} sx={{color:`${theme.palette.text.primary}`, '&:hover': {fontWeight: {xs:'regular', md:'regular', lg:'bold'}}, fontSize:{xs:'12px', md:'16px'}, marginLeft:{xs:'8px', md:'16px'}}} underline="none" to={"/shops"}>SHOP</Link>
+            <Link component={RouterLink} sx={{color:`${theme.palette.text.primary}`, '&:hover': {fontWeight: {xs:'regular', md:'regular', lg:'bold'}}, fontSize:{xs:'12px', md:'16px'}, marginLeft:{xs:'8px', md:'16px'}}} underline="none" to={"/"}>SHOP</Link>
             <Link component={RouterLink} sx={{color:`${theme.palette.text.primary}`, '&:hover': {fontWeight: {xs:'regular', md:'regular', lg:'bold'}}, fontSize:{xs:'12px', md:'16px'}, marginLeft:{xs:'8px', md:'16px'}}} underline="none" to={"/cart"}>SHOPPING CART</Link>
           </Stack>
         </Toolbar>

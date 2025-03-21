@@ -1,5 +1,5 @@
 // import { MedsList } from '../meds/MedsList'
-import ShopsList from "../shops/ShopsList"
+import ShopsList from "./ShopsList"
 import { createContext, useState} from "react"
 import Stack from '@mui/material/Stack'
 
@@ -7,9 +7,9 @@ import React from 'react'
 
 const MainPage = () => {
   return (
-    <div>
+    <Stack direction='row'>
       <ShopsList/>
-    </div>
+    </Stack>
   )
 }
 

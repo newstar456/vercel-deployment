@@ -2,7 +2,7 @@
 // import './App.css';
 //   import axios from "axios"
 // import ShopsList from "./features/shops/ShopsList";
-import MainPage from "./features/mainPage/MainPage";
+import MainPage from "./features/MainPage";
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 // import ShopsListExtended from "./features/shops/ShopsListExtended";
 // import { ShopPage } from "./features/shops/ShopPage";
@@ -10,7 +10,7 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 // import { History } from "./features/history/History";
 // import {CouponsList} from "./features/coupons/CouponsList";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Cart from './features/cart/Cart';
+import Cart from './features/Cart';
 import NotFoundPage from './features/NotFoundPage';
 import RootLayout from "./layout/RootLayout";
 

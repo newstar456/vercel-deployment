@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useSelector } from "react-redux"
-import { useGetShopsQuery, selectAllShops} from '../api/shopsSlice'
-import Shop from './Shop'
+import { useGetShopsQuery, selectAllShops} from './api/shopsSlice'
 import {Box, Typography, Stack, Button} from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import styled, { ThemeConsumer } from "styled-components"
@@ -12,15 +11,10 @@ const ShopsMenu = styled(Box) (function () {
   const theme = useTheme();
   return {
     padding: `15px`,
+    paddingTop: `100px`,
     minWidth: `200px`,
-    // position: `fixed`,
-    // [theme.breakpoints.up("mobile")]: {
-    //   display:'none',
-    
-    // },
-    // [theme.breakpoints.up("laptop")]: {
-    //  display:'block',
-    // }
+    maxWidth: `250px`,
+    position: 'fixed',
   }
 })
 const ShopsTitle = styled(Typography) (function () {
@@ -28,6 +22,7 @@ const ShopsTitle = styled(Typography) (function () {
   return {
     color:`${theme.palette.text.secondary}`,
     textAlign:"center",
+    position: "relative",
    [theme.breakpoints.up("mobile")]: {
       paddingBottom:'16px',
       fontSize:'12px'
@@ -73,13 +68,13 @@ const ShopsList = () => {
   }, []);
 
 
- contentShops = shops.map(shop => <Button variant='outlined'>{shop.name}</Button>)
+ contentShops = shops.map(shop => <Button variant='outlined' size="large" key={shop.name}>{shop.name}</Button>)
 
        
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>SHOPS:</ShopsTitle>
-      <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
+      <ShopsStack direction='column'>{contentShops}</ShopsStack>
 
     </ShopsMenu>
   );
