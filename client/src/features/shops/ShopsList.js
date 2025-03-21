@@ -5,6 +5,7 @@ import Shop from './Shop'
 import {Box, Typography, Stack} from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import styled, { ThemeConsumer } from "styled-components"
+ import axios from "axios"
 
 
 const ShopsMenu = styled(Box) (function () {
@@ -53,8 +54,28 @@ const ShopsStack = styled(Stack) (function () {
 
 const ShopsList = () => {
 
-  const shops = useSelector(selectAllShops)
-  console.log(shops);
+    const [shops, setShops] = useState([]);
+
+    const fetchShops = async () => {
+      try {
+        // await axios.get("http://localhost:3000/home")
+        await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
+          .then((response) => {
+            // console.log(response.data);
+            setShops(response.data);
+
+          });
+      } catch (error) {
+        // Handle error
+        console.error(error);
+      }
+    };
+    fetchShops();
+
+    console.log(shops);
+
+//   const shops = useSelector(selectAllShops)
+//   console.log(shops);
 //   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
 //   let contentShops = shops.map(shopId => console.log(shopId))
        
