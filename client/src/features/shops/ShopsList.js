@@ -74,12 +74,12 @@ const ShopsList = () => {
         };
         fetchShops();
        
-    }, [shops]); // [] ensures this effect runs only once on mount
+    }, []); // [] ensures this effect runs only once on mount
 
 
     // fetchShops();
 
-    console.log(shops);
+    // console.log(shops);
 
 //   const shops = useSelector(selectAllShops)
 //   console.log(shops);
@@ -89,7 +89,7 @@ const ShopsList = () => {
     
 // }
 
-//  contentShops = shops.map(shop => shop.id)
+ contentShops = shops.map(shop => shop.id)
 
        
   return(
