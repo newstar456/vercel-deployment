@@ -63,7 +63,7 @@ const ShopsList = () => {
               // await axios.get("http://localhost:3000/home")
               await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
                 .then((response) => {
-                    const obj = JSON.parse(response)
+                    const obj = JSON.parse(response.data)
                   // console.log(response.data);
                   setShops(obj);
                 });
