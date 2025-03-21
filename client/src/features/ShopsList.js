@@ -56,8 +56,9 @@ const ShopsList = () => {
           try {
             await axios.get("https://vercel-deployment-five-xi.vercel.app")
               .then((response) => {
-                  const obj = JSON.parse(response.data2)
-                setShops(obj);
+                // console.log(response.data);
+                  // const obj = JSON.parse(response.data)
+                setShops(response.data);
               });
           } catch (error) {
             console.error(error);
@@ -66,15 +67,15 @@ const ShopsList = () => {
       fetchShops();
      
   }, []);
+console.log(shops);
 
-
- contentShops = shops.map(shop => <Button variant='outlined' size="large" key={shop.name}>{shop.name}</Button>)
+//  contentShops = shops.map(shop => <Button variant='outlined' size="large" key={shop.name}>{shop.name}</Button>)
 
        
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>SHOPS:</ShopsTitle>
-      <ShopsStack direction='column'>{contentShops}</ShopsStack>
+      {/* <ShopsStack direction='column'>{contentShops}</ShopsStack> */}
 
     </ShopsMenu>
   );
