@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useSelector } from "react-redux"
 import { useGetShopsQuery, selectAllShops} from '../api/shopsSlice'
 import Shop from './Shop'
-import {Box, Typography, Stack} from '@mui/material'
+import {Box, Typography, Stack, Button} from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import styled, { ThemeConsumer } from "styled-components"
  import axios from "axios"
@@ -54,54 +54,33 @@ const ShopsStack = styled(Stack) (function () {
 
 const ShopsList = () => {
 
-    let contentShops;
-    const [shops, setShops] = useState([]);
-
-    useEffect(() => {
-        const fetchShops = async () => {
-            try {
-              // await axios.get("http://localhost:3000/home")
-              await axios.get("https://vercel-deployment-five-xi.vercel.app")
-                .then((response) => {
-                    const obj = JSON.parse(response.data)
-                  // console.log(response.data);
-                  setShops(obj);
-                });
-            } catch (error) {
-              // Handle error
-              console.error(error);
-            }
-        };
-        fetchShops();
-       
-    }, []); // [] ensures this effect runs only once on mount
+  let contentShops;
+  const [shops, setShops] = useState([]);
+  useEffect(() => {
+      const fetchShops = async () => {
+          try {
+            await axios.get("https://vercel-deployment-five-xi.vercel.app")
+              .then((response) => {
+                  const obj = JSON.parse(response.data)
+                setShops(obj);
+              });
+          } catch (error) {
+            console.error(error);
+          }
+      };
+      fetchShops();
+     
+  }, []);
 
 
-    // fetchShops();
-
-    // console.log(shops);
-
-//   const shops = useSelector(selectAllShops)
-//   console.log(shops);
-//   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
-
-// if(shops.length){
-    
-// }
-
- contentShops = shops.map(shop => shop.id)
+ contentShops = shops.map(shop => <Button variant='outlined'>shop.name</Button>)
 
        
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
       <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
-      <Stack direction='column'>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      </Stack>
-      {/* <h1>{contentShops}</h1> */}
+
     </ShopsMenu>
   );
 }
