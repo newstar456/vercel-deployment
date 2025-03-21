@@ -95,7 +95,8 @@ const ShopsList = () => {
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
-      <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
+      {/* <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack> */}
+      <h1 className='text-red-500'>{contentShops}</h1>
     </ShopsMenu>
   );
 }
