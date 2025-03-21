@@ -13,14 +13,14 @@ const ShopsMenu = styled(Box) (function () {
   return {
     padding: `15px`,
     minWidth: `200px`,
-    position: `fixed`,
-    [theme.breakpoints.up("mobile")]: {
-      display:'none',
+    // position: `fixed`,
+    // [theme.breakpoints.up("mobile")]: {
+    //   display:'none',
     
-    },
-    [theme.breakpoints.up("laptop")]: {
-     display:'block',
-    }
+    // },
+    // [theme.breakpoints.up("laptop")]: {
+    //  display:'block',
+    // }
   }
 })
 const ShopsTitle = styled(Typography) (function () {
@@ -78,7 +78,7 @@ const ShopsList = () => {
        
   return(
     <ShopsMenu>
-      <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
+      <ShopsTitle variant='h5'>SHOPS:</ShopsTitle>
       <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
 
     </ShopsMenu>
