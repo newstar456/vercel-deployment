@@ -72,17 +72,17 @@ const ShopsList = () => {
     };
     fetchShops();
 
-    console.log(shops);
+    // console.log(shops);
 
 //   const shops = useSelector(selectAllShops)
 //   console.log(shops);
 //   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
-//   let contentShops = shops.map(shopId => console.log(shopId))
+  let contentShops = shops.map(shop => console.log(shop.id))
        
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>CHOOSE SHOP:</ShopsTitle>
-      {/* <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack> */}
+      <ShopsStack direction='column' useFlexGap flexWrap='wrap'>{contentShops}</ShopsStack>
     </ShopsMenu>
   );
 }
