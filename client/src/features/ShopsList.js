@@ -57,8 +57,8 @@ const ShopsList = () => {
             await axios.get("https://vercel-deployment-five-xi.vercel.app")
               .then((response) => {
                 // console.log(response.data);
-                  // const obj = JSON.parse(response.data)
-                setShops(response.data);
+                  const obj = JSON.parse(response.data)
+                setShops(obj);
               });
           } catch (error) {
             console.error(error);
