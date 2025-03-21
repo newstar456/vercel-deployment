@@ -73,7 +73,7 @@ const ShopsList = () => {
   }, []);
 
 
- contentShops = shops.map(shop => <Button variant='outlined'>(shop.name)</Button>)
+ contentShops = shops.map(shop => <Button variant='outlined'>{shop.name}</Button>)
 
        
   return(
