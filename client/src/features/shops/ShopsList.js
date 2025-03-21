@@ -54,30 +54,43 @@ const ShopsStack = styled(Stack) (function () {
 
 const ShopsList = () => {
 
+    let contentShops;
     const [shops, setShops] = useState([]);
 
-    const fetchShops = async () => {
-      try {
-        // await axios.get("http://localhost:3000/home")
-        await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
-          .then((response) => {
-            // console.log(response.data);
-            setShops(response.data);
+    useEffect(() => {
+        const fetchShops = async () => {
+            try {
+              // await axios.get("http://localhost:3000/home")
+              await axios.get("https://vercel-deployment-five-xi.vercel.app/shops")
+                .then((response) => {
+                    const obj = JSON.parse(response)
+                  // console.log(response.data);
+                  setShops(obj);
+                });
+            } catch (error) {
+              // Handle error
+              console.error(error);
+            }
+        };
+        fetchShops();
+       
+    }, [shops]); // [] ensures this effect runs only once on mount
 
-          });
-      } catch (error) {
-        // Handle error
-        console.error(error);
-      }
-    };
-    fetchShops();
 
-    // console.log(shops);
+    // fetchShops();
+
+    console.log(shops);
 
 //   const shops = useSelector(selectAllShops)
 //   console.log(shops);
 //   let contentShops = shops.map(shopId => <Shop setShop={setShop} key={shopId.id} shopId={shopId}/>)
-  let contentShops = shops.map(shop => console.log(shop.id))
+
+// if(shops.length){
+    
+// }
+
+//  contentShops = shops.map(shop => shop.id)
+
        
   return(
     <ShopsMenu>
