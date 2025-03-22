@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import { useSelector } from "react-redux"
-import { useGetShopsQuery, selectAllShops} from './api/shopsSlice'
-import {Box, Typography, Stack, Button} from '@mui/material'
+import {Box, Typography, Stack} from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import styled, { ThemeConsumer } from "styled-components"
- import axios from "axios"
+import styled from "styled-components"
+
 
 
 const ShopsMenu = styled(Box) (function () {
@@ -14,7 +12,7 @@ const ShopsMenu = styled(Box) (function () {
     paddingTop: `100px`,
     minWidth: `200px`,
     maxWidth: `250px`,
-    position: 'fixed',
+    // position: 'fixed',
   }
 })
 const ShopsTitle = styled(Typography) (function () {
@@ -47,38 +45,15 @@ const ShopsStack = styled(Stack) (function () {
 })
 
 
-const ShopsList = () => {
-
-  let contentShops;
-  const [data, setData] = useState([]);
-  useEffect(() => {
-      const fetchShops = async () => {
-          try {
-            await axios.get("https://vercel-deployment-five-xi.vercel.app")
-              .then((response) => {
-                // console.log(response.data);
-                  const obj = JSON.parse(response.data)
-                setData(obj);
-              });
-          } catch (error) {
-            console.error(error);
-          }
-      };
-      fetchShops();
-     
-  }, []);
-// console.log(shops);
-
-//  contentShops = shops.map(shop => <Button variant='outlined' size="large" key={shop.name}>{shop.name}</Button>)
- contentShops = data.map(shop => shop.Shop)
-
-       
+const ShopsList = ({contentShops}) => {
+  
   return(
+
     <ShopsMenu>
       <ShopsTitle variant='h5'>SHOPS:</ShopsTitle>
       <ShopsStack direction='column'>{contentShops}</ShopsStack>
-
     </ShopsMenu>
+
   );
 }
 
