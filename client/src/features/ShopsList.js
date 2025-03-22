@@ -50,7 +50,7 @@ const ShopsStack = styled(Stack) (function () {
 const ShopsList = () => {
 
   let contentShops;
-  const [shops, setShops] = useState([]);
+  const [data, setData] = useState([]);
   useEffect(() => {
       const fetchShops = async () => {
           try {
@@ -58,7 +58,7 @@ const ShopsList = () => {
               .then((response) => {
                 // console.log(response.data);
                   const obj = JSON.parse(response.data)
-                setShops(obj);
+                setData(obj);
               });
           } catch (error) {
             console.error(error);
@@ -67,15 +67,16 @@ const ShopsList = () => {
       fetchShops();
      
   }, []);
-console.log(shops);
+// console.log(shops);
 
 //  contentShops = shops.map(shop => <Button variant='outlined' size="large" key={shop.name}>{shop.name}</Button>)
+ contentShops = data.map(shop => shop.Shop)
 
        
   return(
     <ShopsMenu>
       <ShopsTitle variant='h5'>SHOPS:</ShopsTitle>
-      {/* <ShopsStack direction='column'>{contentShops}</ShopsStack> */}
+      <ShopsStack direction='column'>{contentShops}</ShopsStack>
 
     </ShopsMenu>
   );
